@@ -41,10 +41,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="EfGenericRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="EntityFramework\" />
-    <Folder Include="Repository\" />
+    <Folder Include="EntityFramework\DbContexts\" />
+    <Folder Include="EntityFramework\Mappings\" />
+    <Folder Include="EntityFramework\Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
