@@ -8,5 +8,14 @@ namespace Sample.Core.Cache
 {
     public interface ICacheManager
     {
+        T Get<T>(string key);
+
+        void Set(string key, object value, TimeSpan cacheTime);
+
+        bool Contains(string key);
+
+        void Remove(string key);
+
+        void Clear();
     }
 }
