@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sample.Service
+namespace Sample.Web.Core.AssemblyExtensions
 {
-    public class ServiceDependencyRegister : IDependencyRegister
+    public class WebAppTypeFinder : AppDomainTypeFinder
     {
 
     }

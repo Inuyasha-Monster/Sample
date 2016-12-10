@@ -40,10 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssemblyExtensions\WebAppTypeFinder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="AssemblyExtensions\" />
     <Folder Include="MvcExtensions\ActionResultExtensions\" />
     <Folder Include="MvcExtensions\AjaxHelperExtensions\" />
     <Folder Include="MvcExtensions\ControllerExtensions\" />
@@ -51,6 +51,12 @@
     <Folder Include="MvcExtensions\HtmlHelperExtensions\" />
     <Folder Include="MvcExtensions\ValidationAttributeExtensions\" />
     <Folder Include="MvcExtensions\WebPageExtensions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sample.Core\Sample.Core.csproj">
+      <Project>{215265EA-B19D-4B6C-A046-00B9D8F94EE4}</Project>
+      <Name>Sample.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
