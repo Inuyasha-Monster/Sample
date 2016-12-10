@@ -3,6 +3,26 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample.Web.Core", "Sample.Web.Core", "{325EFF17-0462-47BD-B3C1-3D3BF319A7AE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample.Web.UI", "Sample.Web.UI", "{B621949C-F409-4DDD-A46C-517F5B54CABF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample.Core", "Sample.Core", "{39371D32-EDE5-4B97-B736-66D9663E651E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample.Repository", "Sample.Repository", "{C7F9215A-669B-471B-A0EA-A55F2C1633DA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample.Service", "Sample.Service", "{382B6726-3430-4565-B31A-ECE9F1AC4293}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample.Test", "Sample.Test", "{0F954211-4B97-4585-8C45-518474B83607}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample.Web.Test", "Sample.Web.Test", "{54D2DFEF-C797-4106-B6F5-28096422751F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample.Api", "Sample.Api", "{DD854147-E843-45B1-A751-B6801585016C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample.Api.Test", "Sample.Api.Test", "{2ACEECD0-455B-434D-9C69-5CB3412E0AC2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample.Api.SelfHost", "Sample.Api.SelfHost", "{12567217-3BF7-4934-A642-A339A7DFCA2E}"
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
