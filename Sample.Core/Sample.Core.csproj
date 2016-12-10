@@ -40,19 +40,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cache\ICacheManager.cs" />
+    <Compile Include="Cache\MemcacheCacheManager.cs" />
+    <Compile Include="Cache\NullCacheManager.cs" />
+    <Compile Include="Cache\RedisCacheManager.cs" />
+    <Compile Include="Cache\RuntimeCacheManager.cs" />
+    <Compile Include="Config\ApplicationSection.cs" />
+    <Compile Include="Config\MemcacheCacheElement.cs" />
+    <Compile Include="Config\MemcachedCacheElementCollection.cs" />
+    <Compile Include="Config\MongoDbConfig.cs" />
+    <Compile Include="Config\PageSizeConfig.cs" />
+    <Compile Include="Config\RedisCacheElement.cs" />
+    <Compile Include="Config\RedisCacheElementCollection.cs" />
+    <Compile Include="DataBaseEntity\BaseEntity.cs" />
+    <Compile Include="DataBaseEntity\BaseGenericEntity.cs" />
+    <Compile Include="DataBaseEntity\DataBaseEntity.cs" />
+    <Compile Include="IBaseRepository\IGenericRepository.cs" />
+    <Compile Include="Infrastructure\AppDomainTypeFinder.cs" />
+    <Compile Include="Infrastructure\BasicDependencyRegister.cs" />
+    <Compile Include="Infrastructure\IDependencyRegister.cs" />
+    <Compile Include="Infrastructure\ITypeFinder.cs" />
+    <Compile Include="Infrastructure\ServiceContanier.cs" />
+    <Compile Include="Log\ILogger.cs" />
+    <Compile Include="Log\Log4NetLogger.cs" />
+    <Compile Include="Log\NLogLogger.cs" />
+    <Compile Include="Log\NullLogger.cs" />
+    <Compile Include="NetFrameworkExtensions\LinqExtension.cs" />
+    <Compile Include="NetFrameworkExtensions\StringExtension.cs" />
+    <Compile Include="NoSql\BaseMongoDbObject.cs" />
+    <Compile Include="NoSql\MongoDbAccessHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Untils\EmailHelper.cs" />
+    <Compile Include="Untils\ExcelHelper.cs" />
+    <Compile Include="Untils\MD5Helper.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Cache\" />
-    <Folder Include="Config\" />
-    <Folder Include="DataBaseEntity\" />
-    <Folder Include="IBaseRepository\" />
-    <Folder Include="Infrastructure\" />
-    <Folder Include="Log\" />
-    <Folder Include="NetFrameworkExtensions\" />
-    <Folder Include="NoSql\" />
-    <Folder Include="Untils\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
