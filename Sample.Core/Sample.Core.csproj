@@ -113,7 +113,7 @@
     <Compile Include="Infrastructure\BasicDependencyRegister.cs" />
     <Compile Include="Infrastructure\IDependencyRegister.cs" />
     <Compile Include="Infrastructure\ITypeFinder.cs" />
-    <Compile Include="Infrastructure\ServiceContanier.cs" />
+    <Compile Include="Infrastructure\ServiceContainer.cs" />
     <Compile Include="Log\ILogger.cs" />
     <Compile Include="Log\Log4NetLogger.cs" />
     <Compile Include="Log\NLogLogger.cs" />
