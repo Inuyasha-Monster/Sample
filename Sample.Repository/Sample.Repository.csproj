@@ -65,15 +65,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntityFramework\DbContexts\ISampleDbContext.cs" />
+    <Compile Include="EntityFramework\DbContexts\SampleDbContext.cs" />
+    <Compile Include="EntityFramework\Mappings\AccountMap.cs" />
+    <Compile Include="EntityFramework\Models\Account.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositoryDependencyRegister.cs" />
     <Compile Include="Repository\EfGenericRepository.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="EntityFramework\DbContexts\" />
-    <Folder Include="EntityFramework\Mappings\" />
-    <Folder Include="EntityFramework\Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Sample.Core\Sample.Core.csproj">
       <Project>{215265EA-B19D-4B6C-A046-00B9D8F94EE4}</Project>
