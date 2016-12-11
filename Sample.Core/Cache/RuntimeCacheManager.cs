@@ -10,7 +10,7 @@ namespace Sample.Core.Cache
 {
     public class RuntimeCacheManager : ICacheManager
     {
-        private static MemoryCache CacheItems
+        private MemoryCache CacheItems
         {
             get
             {

@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Practices.Unity;
+using Sample.Core.Cache;
+using Sample.Core.Config;
+using Sample.Core.Log;
 
 namespace Sample.Core.Infrastructure
 {
@@ -11,7 +14,25 @@ namespace Sample.Core.Infrastructure
     {
         public void RegisterTypes(IUnityContainer container)
         {
-            throw new NotImplementedException();
+            #region CacheRegister
+
+            container.RegisterType<ICacheManager, NullCacheManager>(new TransientLifetimeManager());
+
+            #endregion
+
+            #region TypeFinderRegister
+
+
+            container.RegisterType<ITypeFinder, AppDomainTypeFinder>(new ContainerControlledLifetimeManager());
+
+
+            #endregion
+
+            #region LogRegister
+
+            container.RegisterType<ILogger, NullLogger>(new TransientLifetimeManager());
+
+            #endregion
         }
     }
 }

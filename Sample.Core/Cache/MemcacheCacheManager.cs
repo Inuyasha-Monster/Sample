@@ -11,9 +11,9 @@ namespace Sample.Core.Cache
 {
     public class MemcacheCacheManager : ICacheManager
     {
-        private static readonly MemcachedClient client;
+        private readonly MemcachedClient client;
 
-        static MemcacheCacheManager()
+        public MemcacheCacheManager()
         {
             client = new MemcachedClient();
         }
