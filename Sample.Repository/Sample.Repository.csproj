@@ -69,11 +69,20 @@
     <Compile Include="EntityFramework\DbContexts\SampleDbContext.cs" />
     <Compile Include="EntityFramework\Mappings\AccountMap.cs" />
     <Compile Include="EntityFramework\Models\Account.cs" />
+    <Compile Include="Migrations\201612141445503_InitSampleDb.cs" />
+    <Compile Include="Migrations\201612141445503_InitSampleDb.Designer.cs">
+      <DependentUpon>201612141445503_InitSampleDb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositoryDependencyRegister.cs" />
     <Compile Include="Repository\EfGenericRepository.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201612141445503_InitSampleDb.resx">
+      <DependentUpon>201612141445503_InitSampleDb.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Sample.Core\Sample.Core.csproj">
       <Project>{215265EA-B19D-4B6C-A046-00B9D8F94EE4}</Project>

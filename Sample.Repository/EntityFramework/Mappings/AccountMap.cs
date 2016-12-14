@@ -12,6 +12,7 @@ namespace Sample.Repository.EntityFramework.Mappings
     {
         public AccountMap()
         {
+            this.ToTable(nameof(Account));
             this.HasKey(x => x.ID);
             this.Property(x => x.Name).IsRequired().HasMaxLength(32);
             this.Property(x => x.Password).IsRequired().HasMaxLength(32);
