@@ -73,6 +73,10 @@
     <Compile Include="Migrations\201612141445503_InitSampleDb.Designer.cs">
       <DependentUpon>201612141445503_InitSampleDb.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612141529519_Account_Add_Phone.cs" />
+    <Compile Include="Migrations\201612141529519_Account_Add_Phone.Designer.cs">
+      <DependentUpon>201612141529519_Account_Add_Phone.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositoryDependencyRegister.cs" />
@@ -81,6 +85,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201612141445503_InitSampleDb.resx">
       <DependentUpon>201612141445503_InitSampleDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612141529519_Account_Add_Phone.resx">
+      <DependentUpon>201612141529519_Account_Add_Phone.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

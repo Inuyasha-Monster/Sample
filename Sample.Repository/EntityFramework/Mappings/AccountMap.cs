@@ -16,6 +16,7 @@ namespace Sample.Repository.EntityFramework.Mappings
             this.HasKey(x => x.ID);
             this.Property(x => x.Name).IsRequired().HasMaxLength(32);
             this.Property(x => x.Password).IsRequired().HasMaxLength(32);
+            this.Property(x => x.Phone).IsRequired().HasMaxLength(32);
         }
     }
 }
