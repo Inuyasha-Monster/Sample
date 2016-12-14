@@ -16,6 +16,6 @@ namespace Sample.Core.DataBaseEntity
         }
         public DateTime? CreateTime { get; set; }
         public DateTime? UpdateTime { get; set; }
-        public bool IsDeleted { get; set; }
+        public bool? IsDeleted { get; set; }
     }
 }

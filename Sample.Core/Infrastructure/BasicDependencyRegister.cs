@@ -23,14 +23,14 @@ namespace Sample.Core.Infrastructure
             #region TypeFinderRegister
 
 
-            container.RegisterType<ITypeFinder, AppDomainTypeFinder>(new ContainerControlledLifetimeManager());
+            container.RegisterInstance<ITypeFinder>(typeof(AppDomainTypeFinder).Name, new AppDomainTypeFinder());
 
 
             #endregion
 
             #region LogRegister
 
-            container.RegisterType<ILogger, NullLogger>(new TransientLifetimeManager());
+            container.RegisterType<ILogger, NullLogger>();
 
             #endregion
         }
