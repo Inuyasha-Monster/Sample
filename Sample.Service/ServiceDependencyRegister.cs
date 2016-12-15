@@ -23,7 +23,7 @@ namespace Sample.Service
 
             container.RegisterType<IUnitOfWork, UnitOfWork>();
 
-            container.RegisterType<IDbContext, SampleDbContext>();
+            //container.RegisterType<IDbContext, SampleDbContext>();
 
             container.RegisterType<IAccountService, AccountService>();
         }

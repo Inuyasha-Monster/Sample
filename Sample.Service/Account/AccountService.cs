@@ -24,5 +24,12 @@ namespace Sample.Service.Account
         {
             return this._repository.GetByName(name);
         }
+
+        public bool Add(Repository.EntityFramework.Models.Account item)
+        {
+            var b = this._unitOfWork.RegisteNew(item);
+            this._unitOfWork.Commit();
+            return b;
+        }
     }
 }

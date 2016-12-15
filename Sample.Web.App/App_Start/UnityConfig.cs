@@ -5,6 +5,7 @@ using Sample.Core.Infrastructure;
 using Sample.Web.Core.AssemblyExtensions;
 using System.Configuration;
 using Sample.Core.Config;
+using Sample.Repository.EntityFramework.DbContexts;
 
 namespace Sample.Web.App.App_Start
 {
@@ -47,6 +48,8 @@ namespace Sample.Web.App.App_Start
             var applicationConfiguration = ConfigurationManager.GetSection("applicationConfig") as ApplicationSection;
 
             container.RegisterInstance<ApplicationSection>(applicationConfiguration);
+
+            container.RegisterType<IDbContext, SampleDbContext>(new PerRequestLifetimeManager());
 
             var types = typeFinder.FindClassesOfType<IDependencyRegister>();
             foreach (var item in types)

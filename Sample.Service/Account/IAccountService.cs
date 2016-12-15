@@ -10,5 +10,6 @@ namespace Sample.Service.Account
     public interface IAccountService
     {
         Repository.EntityFramework.Models.Account GetByName(string name);
+        bool Add(Repository.EntityFramework.Models.Account item);
     }
 }
