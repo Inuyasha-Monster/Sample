@@ -9,18 +9,18 @@ namespace Sample.Core.Infrastructure
 {
     public static class ServiceContainer
     {
-        private readonly static Lazy<IUnityContainer> Container;
+        private readonly static IUnityContainer Container;
 
         static ServiceContainer()
         {
-            Container = new Lazy<IUnityContainer>(() => new UnityContainer());
+            Container = new UnityContainer();
         }
 
         public static IUnityContainer CurrentContainer
         {
             get
             {
-                return Container.Value;
+                return Container;
             }
         }
 

@@ -1,6 +1,10 @@
 using System;
 using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Configuration;
+using Sample.Core.Infrastructure;
+using Sample.Web.Core.AssemblyExtensions;
+using System.Configuration;
+using Sample.Core.Config;
 
 namespace Sample.Web.App.App_Start
 {
@@ -12,7 +16,7 @@ namespace Sample.Web.App.App_Start
         #region Unity Container
         private static Lazy<IUnityContainer> container = new Lazy<IUnityContainer>(() =>
         {
-            var container = new UnityContainer();
+            var container = ServiceContainer.CurrentContainer;
             RegisterTypes(container);
             return container;
         });
@@ -37,6 +41,19 @@ namespace Sample.Web.App.App_Start
 
             // TODO: Register your types here
             // container.RegisterType<IProductRepository, ProductRepository>(new PerRequestLifetimeManager());
+
+            ITypeFinder typeFinder = new WebAppTypeFinder();
+
+            var applicationConfiguration = ConfigurationManager.GetSection("applicationConfig") as ApplicationSection;
+
+            container.RegisterInstance<ApplicationSection>(applicationConfiguration);
+
+            var types = typeFinder.FindClassesOfType<IDependencyRegister>();
+            foreach (var item in types)
+            {
+                var register = (IDependencyRegister)Activator.CreateInstance(item);
+                register.RegisterTypes(container);
+            }
         }
     }
 }

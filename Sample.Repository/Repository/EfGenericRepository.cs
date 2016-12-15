@@ -6,59 +6,49 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Linq.Expressions;
+using Sample.Repository.EntityFramework.DbContexts;
 
 namespace Sample.Repository.Repository
 {
     public class EfGenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : BaseEntity
     {
-        public void Add(TEntity entity)
+        private readonly IDbContext _context;
+        public EfGenericRepository(IDbContext context)
         {
-            throw new NotImplementedException();
-        }
-
-        public void AddMany(IEnumerable<TEntity> entities)
-        {
-            throw new NotImplementedException();
+            this._context = context;
         }
 
         public IQueryable<TEntity> All()
         {
-            throw new NotImplementedException();
+            return this._context.Set<TEntity>();
         }
 
         public IQueryable<TEntity> AllByCondition(Expression<Func<TEntity, bool>> predicate)
         {
-            throw new NotImplementedException();
+            return this._context.Set<TEntity>().Where(predicate);
         }
 
         public long Count(Expression<Func<TEntity, bool>> predicate)
         {
-            throw new NotImplementedException();
+            return this._context.Set<TEntity>().Where(predicate).LongCount();
         }
 
         public TEntity GetEntityByID(int id)
         {
-            throw new NotImplementedException();
+            return this._context.Set<TEntity>().Find(id);
         }
 
-        public void Remove(TEntity entity)
+        public IQueryable<TEntity> GetPageQuery(int pageSize, int pageIndex, Expression<Func<TEntity, bool>> where)
         {
-            throw new NotImplementedException();
-        }
-
-        public void RemoveMany(IEnumerable<TEntity> entities)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(TEntity entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void UpdateMany(IEnumerable<TEntity> entities)
-        {
-            throw new NotImplementedException();
+            if (pageIndex - 1 <= 0)
+            {
+                pageIndex = 1;
+            }
+            if (pageSize <= 10)
+            {
+                pageSize = 10;
+            }
+            return this._context.Set<TEntity>().Where(where).Skip(pageSize - 1).Take(pageSize);
         }
     }
 }

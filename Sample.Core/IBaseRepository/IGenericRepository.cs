@@ -12,21 +12,11 @@ namespace Sample.Core.IBaseRepository
     {
         TEntity GetEntityByID(int id);
 
-        void Add(TEntity entity);
-
-        void AddMany(IEnumerable<TEntity> entities);
-
-        void Update(TEntity entity);
-
-        void UpdateMany(IEnumerable<TEntity> entities);
-
-        void Remove(TEntity entity);
-
-        void RemoveMany(IEnumerable<TEntity> entities);
-
         IQueryable<TEntity> All();
 
         IQueryable<TEntity> AllByCondition(Expression<Func<TEntity, bool>> predicate);
+
+        IQueryable<TEntity> GetPageQuery(int pageSize, int pageIndex, Expression<Func<TEntity, bool>> where);
 
         long Count(Expression<Func<TEntity, bool>> predicate);
     }

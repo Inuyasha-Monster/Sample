@@ -16,7 +16,7 @@ namespace Sample.Core.Infrastructure
         {
             #region CacheRegister
 
-            container.RegisterType<ICacheManager, NullCacheManager>(new TransientLifetimeManager());
+            container.RegisterType<ICacheManager, NullCacheManager>();
 
             #endregion
 

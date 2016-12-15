@@ -5,6 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Practices.Unity;
+using Sample.Core.IBaseRepository;
+using Sample.Repository.Repository;
+using Sample.Core.UnitOfWork;
+using Sample.Repository.EntityFramework.DbContexts;
+using Sample.Service.Account;
 
 namespace Sample.Service
 {
@@ -12,7 +17,15 @@ namespace Sample.Service
     {
         public void RegisterTypes(IUnityContainer container)
         {
-            throw new NotImplementedException();
+            container.RegisterType(typeof(IGenericRepository<>), typeof(EfGenericRepository<>));
+
+            container.RegisterType<IAccountRepository, AccountRepository>();
+
+            container.RegisterType<IUnitOfWork, UnitOfWork>();
+
+            container.RegisterType<IDbContext, SampleDbContext>();
+
+            container.RegisterType<IAccountService, AccountService>();
         }
     }
 }

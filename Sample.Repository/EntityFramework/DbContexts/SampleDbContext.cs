@@ -11,19 +11,14 @@ using System.Threading.Tasks;
 
 namespace Sample.Repository.EntityFramework.DbContexts
 {
-    public class SampleDbContext : DbContext, ISampleDbContext
+    public class SampleDbContext : DbContext, IDbContext
     {
-        static SampleDbContext()
-        {
-            Database.SetInitializer<SampleDbContext>(null);
-        }
+        private readonly static string DbName = "db_sample";
 
-        public SampleDbContext() : base("server=.;database=SampleDb;uid=sa;pwd=123456")
+        public SampleDbContext() : base($"name={DbName}")
         {
 
         }
-
-        public DbSet<Account> Accounts { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
