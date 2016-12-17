@@ -12,7 +12,7 @@ namespace Sample.Web.App
         protected void Application_Start()
         {
             log4net.Config.XmlConfigurator.Configure();
-            MvcHandler.DisableMvcResponseHeader = true;
+            MvcHandler.DisableMvcResponseHeader = false;
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
