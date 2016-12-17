@@ -159,7 +159,9 @@
   <ItemGroup>
     <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
+    <Folder Include="Content\" />
     <Folder Include="Models\" />
+    <Folder Include="Scripts\" />
     <Folder Include="Views\Home\" />
   </ItemGroup>
   <ItemGroup>

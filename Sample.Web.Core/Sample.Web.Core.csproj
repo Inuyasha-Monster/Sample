@@ -92,11 +92,11 @@
     <Compile Include="AssemblyExtensions\WebAppTypeFinder.cs" />
     <Compile Include="MvcExtensions\ActionResultExtensions\JsonNetResult.cs" />
     <Compile Include="MvcExtensions\ControllerExtensions\BaseController.cs" />
+    <Compile Include="MvcExtensions\FilterExtensions\CustomErrorHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="MvcExtensions\AjaxHelperExtensions\" />
-    <Folder Include="MvcExtensions\FilterExtensions\" />
     <Folder Include="MvcExtensions\HtmlHelperExtensions\" />
     <Folder Include="MvcExtensions\ValidationAttributeExtensions\" />
     <Folder Include="MvcExtensions\WebPageExtensions\" />
