@@ -93,7 +93,6 @@
     <Compile Include="MvcExtensions\ActionResultExtensions\JsonNetResult.cs" />
     <Compile Include="MvcExtensions\ControllerExtensions\BaseController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WebDependencyRegister.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="MvcExtensions\AjaxHelperExtensions\" />

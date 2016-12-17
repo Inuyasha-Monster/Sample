@@ -16,7 +16,7 @@ namespace Sample.Core.IBaseRepository
 
         IQueryable<TEntity> AllByCondition(Expression<Func<TEntity, bool>> predicate);
 
-        IQueryable<TEntity> GetPageQuery(int pageSize, int pageIndex, Expression<Func<TEntity, bool>> where);
+        IQueryable<TEntity> GetPageQuery(int pageSize, int pager, Expression<Func<TEntity, bool>> where);
 
         long Count(Expression<Func<TEntity, bool>> predicate);
     }

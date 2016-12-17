@@ -37,14 +37,6 @@ namespace Sample.Repository.Repository
             }
         }
 
-        public bool RegisteClear<TEntity>(TEntity entity) where TEntity : class
-        {
-            this._context.Entry<TEntity>(entity).State = System.Data.Entity.EntityState.Unchanged;
-            if (this._transaction != null)
-                return this._context.SaveChanges() > 0;
-            return true;
-        }
-
         public bool RegisteDelete<TEntity>(TEntity entity) where TEntity : class
         {
             this._context.Entry<TEntity>(entity).State = System.Data.Entity.EntityState.Deleted;

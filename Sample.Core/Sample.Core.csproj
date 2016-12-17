@@ -110,8 +110,6 @@
     <Compile Include="DataBaseEntity\DataBaseEntity.cs" />
     <Compile Include="IBaseRepository\IGenericRepository.cs" />
     <Compile Include="Infrastructure\AppDomainTypeFinder.cs" />
-    <Compile Include="Infrastructure\BasicDependencyRegister.cs" />
-    <Compile Include="Infrastructure\IDependencyRegister.cs" />
     <Compile Include="Infrastructure\ITypeFinder.cs" />
     <Compile Include="Infrastructure\ServiceContainer.cs" />
     <Compile Include="Log\CustomLogger.cs" />

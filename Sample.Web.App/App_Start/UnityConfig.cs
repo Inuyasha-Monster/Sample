@@ -6,6 +6,12 @@ using Sample.Web.Core.AssemblyExtensions;
 using System.Configuration;
 using Sample.Core.Config;
 using Sample.Repository.EntityFramework.DbContexts;
+using Sample.Core.Cache;
+using Sample.Core.Log;
+using Sample.Core.IBaseRepository;
+using Sample.Repository.Repository;
+using Sample.Core.UnitOfWork;
+using Sample.Service.Account;
 
 namespace Sample.Web.App.App_Start
 {
@@ -43,20 +49,44 @@ namespace Sample.Web.App.App_Start
             // TODO: Register your types here
             // container.RegisterType<IProductRepository, ProductRepository>(new PerRequestLifetimeManager());
 
-            ITypeFinder typeFinder = new WebAppTypeFinder();
+            #region 注册基础服务
+
+            container.RegisterType<ICacheManager, RuntimeCacheManager>();
 
             var applicationConfiguration = ConfigurationManager.GetSection("applicationConfig") as ApplicationSection;
 
             container.RegisterInstance<ApplicationSection>(applicationConfiguration);
 
+            container.RegisterType<ILogger, CustomLogger>();
+
+            container.RegisterInstance<ITypeFinder>(typeof(AppDomainTypeFinder).Name, new AppDomainTypeFinder());
+
+            container.RegisterInstance<ITypeFinder>(typeof(WebAppTypeFinder).Name, new WebAppTypeFinder());
+
+
+            #endregion
+
+            #region 注册仓储和工作单元
+
+            container.RegisterType(typeof(IGenericRepository<>), typeof(EfGenericRepository<>));
+
+            container.RegisterType<IAccountRepository, AccountRepository>();
+
+            container.RegisterType<IUnitOfWork, UnitOfWork>();
+
             container.RegisterType<IDbContext, SampleDbContext>(new PerRequestLifetimeManager());
 
-            var types = typeFinder.FindClassesOfType<IDependencyRegister>();
-            foreach (var item in types)
-            {
-                var register = (IDependencyRegister)Activator.CreateInstance(item);
-                register.RegisterTypes(container);
-            }
+            #endregion
+
+
+            #region 注册应用服务
+
+            container.RegisterType<IAccountService, AccountService>();
+
+            #endregion
+
+
+
         }
     }
 }

@@ -38,11 +38,11 @@ namespace Sample.Repository.Repository
             return this._context.Set<TEntity>().Find(id);
         }
 
-        public IQueryable<TEntity> GetPageQuery(int pageSize, int pageIndex, Expression<Func<TEntity, bool>> where)
+        public IQueryable<TEntity> GetPageQuery(int pageSize, int pager, Expression<Func<TEntity, bool>> where)
         {
-            if (pageIndex - 1 <= 0)
+            if (pager - 1 <= 0)
             {
-                pageIndex = 1;
+                pager = 1;
             }
             if (pageSize <= 10)
             {

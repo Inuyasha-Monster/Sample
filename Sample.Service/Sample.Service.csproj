@@ -67,7 +67,6 @@
   <ItemGroup>
     <Compile Include="Account\AccountService.cs" />
     <Compile Include="Account\IAccountService.cs" />
-    <Compile Include="ServiceDependencyRegister.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

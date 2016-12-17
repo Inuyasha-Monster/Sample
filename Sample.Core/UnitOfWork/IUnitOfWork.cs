@@ -22,10 +22,6 @@ namespace Sample.Core.UnitOfWork
         bool RegisteManyDirty<TEntity>(IEnumerable<TEntity> entities)
            where TEntity : class;
 
-
-        bool RegisteClear<TEntity>(TEntity entity)
-           where TEntity : class;
-
         bool RegisteDelete<TEntity>(TEntity entity)
            where TEntity : class;
 
