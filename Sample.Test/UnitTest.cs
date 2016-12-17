@@ -27,7 +27,7 @@ namespace Sample.Test
         public void TestMethod()
         {
             var service = _container.Value.Resolve<IAccountService>();
-            var b = service.Add(new Repository.EntityFramework.Models.Account() { Name = "fuck", Password = "123123", Phone = "bbbbbbbbb" });
+            var b = service.Add(new Repository.EntityFramework.Models.Account() { Name = "fuck", Password = "123123", Phone = "sadasdasdbbn" });
             Assert.IsTrue(b);
         }
     }
