@@ -11,7 +11,6 @@ namespace Sample.Web.App.App_Start
         public static void RegisterGlobalFilters(System.Web.Mvc.GlobalFilterCollection filters)
         {
             filters.Add(new CustomErrorHandlerAttribute());
-            filters.Add(new LanguageFilterAttribute());
         }
     }
 }

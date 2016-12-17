@@ -20,7 +20,8 @@ namespace Sample.Web.App.Controllers
         public ActionResult Index()
         {
             var account = this._accountService.GetByName("djl");
-            return Content(account?.Name + " " + account?.Phone);
+            ViewData.Model = account.Name;
+            return View();
         }
     }
 }
