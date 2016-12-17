@@ -92,7 +92,8 @@
     <Compile Include="AssemblyExtensions\WebAppTypeFinder.cs" />
     <Compile Include="MvcExtensions\ActionResultExtensions\JsonNetResult.cs" />
     <Compile Include="MvcExtensions\ControllerExtensions\BaseController.cs" />
-    <Compile Include="MvcExtensions\FilterExtensions\CustomErrorHandler.cs" />
+    <Compile Include="MvcExtensions\FilterExtensions\CustomErrorHandlerAttribute.cs" />
+    <Compile Include="MvcExtensions\FilterExtensions\LanguageFilterAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
